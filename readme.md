@@ -20,7 +20,7 @@ Imprimir(SOMA);
 Ao final do processamento, qual será o valor da variável `SOMA`?
 
 **Solução:**
-O cálculo foi implementado e o resultado encontra-se no arquivo **1-calculo-soma.py**.
+O cálculo foi implementado e o resultado encontra-se no arquivo **main.js**.
 
 ---
 
@@ -29,7 +29,7 @@ O cálculo foi implementado e o resultado encontra-se no arquivo **1-calculo-som
 Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos dois valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), escreva um programa onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não à sequência.
 
 **Solução:**
-A implementação que verifica se o número pertence à sequência de Fibonacci está no arquivo **2-verifica-fibonacci.py**.
+A implementação que verifica se o número pertence à sequência de Fibonacci está no arquivo **main.js**.
 
 ---
 
@@ -46,7 +46,7 @@ Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, es
 - Dias sem faturamento (finais de semana e feriados) devem ser ignorados no cálculo da média.
 
 **Solução:**
-Os cálculos foram realizados com base nos dados e estão disponíveis no arquivo **3-analise-faturamento.py**.
+Os cálculos foram realizados com base nos dados e estão disponíveis no arquivo **main.js**.
 
 ---
 
@@ -63,7 +63,7 @@ Dado o valor de faturamento mensal de uma distribuidora detalhado por estado:
 Escreva um programa que calcule o percentual de representação que cada estado teve dentro do valor total mensal da distribuidora.
 
 **Solução:**
-O cálculo de percentuais encontra-se no arquivo **4-percentual-faturamento.py**.
+O cálculo de percentuais encontra-se no arquivo **main.js**.
 
 ---
 
@@ -72,22 +72,23 @@ O cálculo de percentuais encontra-se no arquivo **4-percentual-faturamento.py**
 Escreva um programa que inverta os caracteres de uma string sem usar funções prontas, como `reverse`.
 
 **Solução:**
-A inversão de strings foi implementada no arquivo **5-inverte-string.py**.
+A inversão de strings foi implementada no arquivo **main.js**.
 
 ---
 
 ## Como Executar
 1. Clone este repositório:
    ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone https://github.com/BiaCarvalhoCavalieri/Exercises.git
+   
    ```
-2. Navegue até a pasta do projeto:
+2. Instale o pacote http-server globalmente:
    ```bash
-   cd Exercises
+   npm install -g http-server
    ```
-3. Execute o arquivo correspondente à questão desejada:
+3. Inicie o servidor:
    ```bash
-   node nome-do-arquivo.js
+      http-server . -p 8080
    ```
 
 ## Tecnologias Utilizadas
@@ -95,4 +96,4 @@ A inversão de strings foi implementada no arquivo **5-inverte-string.py**.
 - Dados: JSON (quando aplicável)
 
 ## Repositório no GitHub
-[Link]()
+[Exercises](https://github.com/BiaCarvalhoCavalieri/Exercises)
