@@ -1,5 +1,7 @@
-function executeExercise(exerciseNumber) {
+async function executeExercise(exerciseNumber) {
     const resultElement = document.getElementById("result");
+    const resultTitleElement = document.getElementById("result-title");
+    resultTitleElement.innerHTML = `Resultado exercício ${exerciseNumber}:`;
 
     switch (exerciseNumber) {
         case 1:
@@ -9,7 +11,7 @@ function executeExercise(exerciseNumber) {
             resultElement.innerHTML = `<p>${exercise2()}</p>`;
             break;
         case 3:
-            resultElement.innerHTML = `<p>${exercise3()}</p>`;
+            resultElement.innerHTML = `<p>${await exercise3()}</p>`;
             break;
         case 4:
             resultElement.innerHTML = `<p>${exercise4()}</p>`;
@@ -39,14 +41,24 @@ function exercise1() {
 
 // Exercício 2
 function exercise2() {
-    const number = 5; // Altere conforme necessário
-    let factorial = 1;
+    const numero = 21;
 
-    for (let i = 1; i <= number; i++) {
-        factorial *= i;
+    function fibonacci(n) {
+        let fibSequence = [0, 1];
+        while (fibSequence[fibSequence.length - 1] < n) {
+            const nextFib = fibSequence[fibSequence.length - 1] + fibSequence[fibSequence.length - 2];
+            fibSequence.push(nextFib);
+        }
+        return fibSequence;
     }
 
-    return `O fatorial de ${number} é: ${factorial}`;
+    const fibSequence = fibonacci(numero);
+
+    if (fibSequence.includes(numero)) {
+        return `O número ${numero} pertence à sequência de Fibonacci.`;
+    } else {
+        return `O número ${numero} não pertence à sequência de Fibonacci.`;
+    }
 }
 
 // Exercício 3 
@@ -60,10 +72,7 @@ async function exercise3() {
             return `Erro ao carregar o arquivo JSONC: ${error}`;
         }
     }
-
     const faturamentoMensal = await loadJSONData();
-    console.log('faturamentoMensal', faturamentoMensal);
-
     const diasComFaturamento = faturamentoMensal.filter(d => d.valor > 0);
     const menorFaturamento = Math.min(...diasComFaturamento.map(d => d.valor));
     const maiorFaturamento = Math.max(...diasComFaturamento.map(d => d.valor));
